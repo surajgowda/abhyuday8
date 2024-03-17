@@ -8,13 +8,10 @@ def team_details_view(request):
     return render(request, 'team_details.html', {'team_details': team_details,'departments': departments, 'tasks': tasks})
 
 def department_tasks(request, department_id):
-    tasks = Task.objects.all()  # Fetch all tasks
-    departments = set(task.dept.department for task in tasks)
-    # Retrieve tasks for the specified department
     tasks = Task.objects.filter(dept__id=department_id).order_by('deadline')
 
     # Pass tasks to the template
-    return render(request, 'department_tasks.html', {'tasks': tasks,'departments': departments, 'tasks': tasks})
+    return render(request, 'department_tasks.html', {'tasks': tasks})
 
 def home(request):
     tasks = TeamDetails.objects.all()  # Fetch all tasks

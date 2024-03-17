@@ -3,3 +3,4 @@ internal_app/settings.py
 internal_app/__pycache__
 schedule/__pycache__
 schedule/migrations
+a.txt
