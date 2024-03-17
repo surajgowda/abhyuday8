@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhyuday 8.0</title>
+   
+</head>
+<body>
+  
+<style>
+    div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+      }
+      
+      div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      
+      div.scrollmenu a:hover {
+        background-color: #777;
+      }
+      .dep{
+        color: white;
+        }
+</style>
+
+
+<div class="scrollmenu">
+{% for task in tasks %}
+<a href="{% url 'department_tasks' task.id %}">{{ task.department }}</a>
+{% endfor %}
+</div>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
+

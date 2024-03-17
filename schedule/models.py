@@ -15,7 +15,7 @@ class TeamDetails(models.Model):
         return self.department
 
 class Task(models.Model):
-    dept = models.ForeignKey(TeamDetails, on_delete=models.CASCADE)
+    dept = models.ForeignKey('TeamDetails', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField()
     deadline = models.DateField()
